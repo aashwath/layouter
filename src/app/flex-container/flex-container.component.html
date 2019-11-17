@@ -1,0 +1,41 @@
+<mat-sidenav-container>
+	<mat-sidenav #lnav closed mode="over">
+		<app-info-panel></app-info-panel>
+	</mat-sidenav>
+	<mat-sidenav #rnav [opened]="mobileQuery.matches ? false : true" position="end"
+		[mode]="mobileQuery.matches ? 'over' : 'side'">
+		<app-css-widget (sendDflex)="onDflexChanged($event)" (sendWrap)="onWrapChanged($event)"
+			(sendJustCont)="onJustContChange($event)" (sendDir)="onDirChange($event)"
+			(sendAlignItems)="onAlignItemsChange($event)" (sendAlignCont)="onAlignContChange($event)"
+			[selectedFlexItem]="nthChild" (sendItemOrder)="onOrderChange($event)" (sendFlexGrow)="onGrowChange($event)"
+			(sendFlexShrink)="onShrinkChange($event)" (sendFlexBasis)="onBasisChange($event)"
+			(sendAlignSelf)="onAlignSelfChange($event)"></app-css-widget>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<header class="d-flex justify-content-between p-3 mb-3">
+			<div class="d-flex align-items-center">
+				<mat-icon class="material-icons" (click)="lnav.toggle()">
+					help_outline
+				</mat-icon>
+			</div>
+			<div class="d-flex align-items-center">
+				<mat-icon>apps</mat-icon>
+				<p class="ml-2 mb-0">Layouter</p>
+			</div>
+			<div>
+				<mat-icon class="material-icons d-lg-none ml-4" (click)="rnav.toggle()">
+					menu
+				</mat-icon>
+			</div>
+		</header>
+		<div class="container mb-4">
+			<div [ngStyle]="{'visibility': flexContainerStyles.display == 'flex' ? 'hidden' : 'visible'}"><span *ngIf="flexContainerStyles.display == 'block'">A good place to learn about the CSS flex layout. Change the default values on the right panel.</span></div>
+			<div class="flex-container p-3" [ngStyle]="flexContainerStyles">
+				<div class="flex-item m-1" *ngFor="let flex of flexItems; index as i"
+					[style.pointerEvents]="((flexContainerStyles.display == 'flex') && (flexContainerStyles.flexWrap == ('wrap' || 'wrap-reverse'))) ? 'auto' : 'none'"
+					[ngStyle]="i === selected ? flexItemStyles : ''" [class.active]="i === selected"
+					[class.bg-fade]="selected !== undefined" (click)="onItemSelect(i, flex)">{{flex}}</div>
+			</div>
+		</div>
+	</mat-sidenav-content>
+</mat-sidenav-container>

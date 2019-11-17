@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~bootstrap/dist/css/bootstrap-grid.css';
+@import '~bootstrap/dist/css/bootstrap-reboot.css';
+
+// CSS Widget style overwrite
+.mat-sidenav-container{
+  .mat-drawer-inner-container{
+    overflow: unset;
+    //--moz styles
+    scrollbar-width: thin;
+    scrollbar-color: dark;
+
+    ::-webkit-scrollbar{
+      width: 5px
+    }
+
+    ::-webkit-scrollbar-thumb{
+      width: 5px;
+      background-color: #aaaaaa;
+    }
+
+    ::-webkit-scrollbar-track {
+      width: 5px;
+      background-color: #e0e0e0;
+    }
+  }
+}
+
+.code-select .mat-form-field-infix{
+  width: 90px;
+  padding-top: 0;
+  border-top: none;
+
+  .mat-select-value-text span, input{
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: orange;
+  }
+
+  .mat-select-disabled .mat-select-value-text span, input:disabled{
+    color: lightslategray;
+  }
+}
+
+.code-select.code-input .mat-form-field-infix{
+  width: 32.5px;
+  padding-top: 0;
+  border-top: none;
+}
+
+#flex-basis .mat-form-field-infix{
+  width: 60px
+}

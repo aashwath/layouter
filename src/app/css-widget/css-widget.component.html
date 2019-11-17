@@ -1,0 +1,75 @@
+<div class="widget-container p-2 mx-1">
+	<p class="code-bullet"> 1. Make your container a <b><i>flex-container</i></b></p>
+	<div class="code-box">
+		<pre><code><span class="element-name">.flex-container</span>&nbsp;{{'{'}}
+    display:&nbsp;<mat-form-field class="code-select pt-3"><mat-select [(value)]="dFlex" (selectionChange)="onDflexChange()"><mat-option value="block">block;</mat-option>
+    <mat-option value="flex">flex;</mat-option>
+  </mat-select>
+</mat-form-field>
+    flex-direction:&nbsp;<mat-form-field class="code-select"><mat-select [(value)]="flexDir" (selectionChange)="onDirChange()" [disabled]="dFlex == 'block' ? true : false">
+    <mat-option value="row">row;</mat-option>
+    <mat-option value="column">column;</mat-option>
+    <mat-option value="row-reverse">row-reverse;</mat-option>
+    <mat-option value="column-reverse">column-reverse;</mat-option>
+  </mat-select>
+</mat-form-field>
+    flex-wrap:&nbsp;<mat-form-field class="code-select"><mat-select [(value)]="flexWrap" (selectionChange)="onWrapChange()" [disabled]="dFlex == 'block' ? true : false">
+    <mat-option value="nowrap">nowrap;</mat-option>
+    <mat-option value="wrap">wrap;</mat-option>
+    <mat-option value="wrap-reverse">wrap-reverse;</mat-option>
+  </mat-select>
+</mat-form-field>
+{{'}'}}</code></pre>
+	</div>
+	<p class="code-bullet">2. Align flex-items within the <b><i>flex-container</i></b></p>
+	<div class="code-box">
+		<pre><code><span class="element-name">.flex-container</span>&nbsp;{{'{'}}
+    <p class="code-comment">&nbsp;&nbsp;&nbsp;/* horizontally */</p>
+    justify-content:&nbsp;<mat-form-field class="code-select pt-3"><mat-select [(value)]="justifyContnet" (selectionChange)="onJustContChange()" [disabled]="dFlex == 'block' ? true : false">
+  <mat-option value="flex-start">flex-start</mat-option>
+  <mat-option value="flex-end">flex-end</mat-option>
+  <mat-option value="center">center</mat-option>
+  <mat-option value="space-between">space-between</mat-option>
+  <mat-option value="space-around">space-around</mat-option>
+  <mat-option value="space-evenly">space-evenly</mat-option>
+  <mat-option value="stretch">stretch</mat-option>
+  </mat-select>
+</mat-form-field>
+    <p class="code-comment">&nbsp;&nbsp;&nbsp;/* vertically */</p>
+    align-items:&nbsp;<mat-form-field class="code-select pt-3"><mat-select [(value)]="alignItems" (selectionChange)="onAlignItemsChange()" [disabled]="dFlex == 'block' ? true : false">
+  <mat-option value="stretch">stretch</mat-option>
+  <mat-option value="flex-start">flex-start</mat-option>
+  <mat-option value="center">center</mat-option>
+  <mat-option value="flex-end">flex-end</mat-option>
+  </mat-select>
+</mat-form-field>
+    align-content:&nbsp;<mat-form-field class="code-select"><mat-select [(value)]="alignContent" (selectionChange)="onAlignContChange()" [disabled]="dFlex == 'block' ? true : false">
+  <mat-option value="stretch">stretch</mat-option>
+  <mat-option value="flex-start">flex-start</mat-option>
+  <mat-option value="flex-end">flex-end</mat-option>
+  <mat-option value="center">center</mat-option>
+  <mat-option value="space-between">space-between</mat-option>
+  <mat-option value="space-around">space-around</mat-option>
+  <mat-option value="space-evenly">space-evenly</mat-option>
+  </mat-select>
+</mat-form-field>
+{{'}'}}</code></pre>
+	</div>
+	<p class="code-bullet"> 3. Click on a <b><i>flex-item</i></b> and play with it</p>
+	<div class="code-box">
+		<pre><code><span class="element-name">.flex-item:nth-child({{selectedFlexItem ? selectedFlexItem : '?'}})</span>&nbsp;{{'{'}}
+    flex-grow:&nbsp;<mat-form-field class="code-select code-input pt-3"><input type="number" min="0" matInput [(ngModel)]="flexGrow" (change)="onGrowChange()" [disabled]="dFlex == 'flex' && selectedFlexItem ? false : true"></mat-form-field>
+    flex-shrink:&nbsp;<mat-form-field class="code-select code-input"><input type="number" min="0" matInput [(ngModel)]="flexShrink" (change)="onShrinkChange()" [disabled]="dFlex == 'flex' && selectedFlexItem ? false : true"></mat-form-field>
+    flex-basis:&nbsp;<mat-form-field id="flex-basis" class="code-select"><input type="text" matInput [(ngModel)]="flexBasis" (change)="onBasisChange()" [disabled]="dFlex == 'flex' && selectedFlexItem ? false : true"><button mat-icon-button matSuffix matTooltipPosition="right" matTooltip="e.g. 70%, 70px, 70rem etc"><mat-icon>live_help</mat-icon></button></mat-form-field>
+    align-self:&nbsp;<mat-form-field class="code-select"><mat-select [(value)]="alignSelf" (selectionChange)="onAlignSelfChange()" [disabled]="dFlex == 'flex' && selectedFlexItem ? false : true">
+  <mat-option value="auto">auto</mat-option>
+  <mat-option value="flex-start">flex-start</mat-option>
+  <mat-option value="center">center</mat-option>
+  <mat-option value="flex-end">flex-end</mat-option>
+  <mat-option value="baseline">baseline</mat-option>
+  <mat-option value="stretch">stretch</mat-option>
+  </mat-select></mat-form-field>
+    order:&nbsp;<mat-form-field class="code-select code-input"><input type="number" matInput [(ngModel)]="itemOrder" (change)="onOrderChange()" [disabled]="dFlex == 'flex' && selectedFlexItem ? false : true"></mat-form-field>
+{{'}'}}</code></pre>
+	</div>
+</div>
