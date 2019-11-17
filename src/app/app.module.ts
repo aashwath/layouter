@@ -29,7 +29,7 @@ import { InfoPanelComponent } from './info-panel/info-panel.component';
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
-    MatTooltipModule,
+		MatTooltipModule,
     ],
   declarations: [
     AppComponent,

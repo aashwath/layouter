@@ -9,7 +9,14 @@ pre {
 }
 
 .element-name{
-  color: green;
+	color: green;
+	
+	span:first-child{
+		color: crimson;
+	}
+	span:last-child{
+		color:#000000;
+	}
 }
 
 .widget-container > p{

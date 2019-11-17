@@ -57,7 +57,7 @@
 	</div>
 	<p class="code-bullet"> 3. Click on a <b><i>flex-item</i></b> and play with it</p>
 	<div class="code-box">
-		<pre><code><span class="element-name">.flex-item:nth-child({{selectedFlexItem ? selectedFlexItem : '?'}})</span>&nbsp;{{'{'}}
+		<pre><code><span class="element-name">.flex-item<span>:nth-child</span><span>({{selectedFlexItem ? selectedFlexItem : '?'}})</span></span>&nbsp;{{'{'}}
     flex-grow:&nbsp;<mat-form-field class="code-select code-input pt-3"><input type="number" min="0" matInput [(ngModel)]="flexGrow" (change)="onGrowChange()" [disabled]="dFlex == 'flex' && selectedFlexItem ? false : true"></mat-form-field>
     flex-shrink:&nbsp;<mat-form-field class="code-select code-input"><input type="number" min="0" matInput [(ngModel)]="flexShrink" (change)="onShrinkChange()" [disabled]="dFlex == 'flex' && selectedFlexItem ? false : true"></mat-form-field>
     flex-basis:&nbsp;<mat-form-field id="flex-basis" class="code-select"><input type="text" matInput [(ngModel)]="flexBasis" (change)="onBasisChange()" [disabled]="dFlex == 'flex' && selectedFlexItem ? false : true"><button mat-icon-button matSuffix matTooltipPosition="right" matTooltip="e.g. 70%, 70px, 70rem etc"><mat-icon>live_help</mat-icon></button></mat-form-field>
