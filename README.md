@@ -1,6 +1,6 @@
 # Layouter
 
-![Layouter Screenshot](https://github.com/aashwath/boonews/blob/master/boonews_snip_1280x640.png)
+![Layouter Screenshot](https://github.com/aashwath/layouter/blob/master/layouter_screenshot.png)
 
 A web app for understanding how the CSS Flexbox layout works
 
