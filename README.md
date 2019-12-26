@@ -1,22 +1,16 @@
 # Layouter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+![Layouter Screenshot](https://github.com/aashwath/boonews/blob/master/boonews_snip_1280x640.png)
 
-## Development server
+A web app for understanding how the CSS Flexbox layout works
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Click [here](https://css-layouter.web.app) to start playing around.
 
-## Code scaffolding
+Made with [Angular](https://github.com/angular) and [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2, [Angular Material](https://github.com/angular/components) and [Bootstrap](https://github.com/twbs/bootstrap) version 4.3.1
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## After cloning the repo...
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Open the command line in that directory and run `npm install`. Once done, run `ng s --o` for initiating a dev server and initializing the app on the browser at `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Further help
 
